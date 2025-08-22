@@ -1,0 +1,6 @@
+credentials:
+  api_key: YOUR-API_KEY
+  secret_key: YOUR-SECRET_KEY
+
+http:
+  uri_prefix: https://fapi.bitunix.com
