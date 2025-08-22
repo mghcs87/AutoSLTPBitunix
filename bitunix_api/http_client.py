@@ -5,7 +5,7 @@ import uuid
 import requests
 import json
 
-from config import Config
+from bitunix_api.config import Config
 from bitunix_api.error_codes import ErrorCode
 
 def get_nonce() -> str:

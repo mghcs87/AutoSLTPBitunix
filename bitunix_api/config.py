@@ -3,7 +3,7 @@ from typing import Dict, Any
 import os
 
 class Config:
-    def __init__(self, config_path: str = "../config.yaml"):
+    def __init__(self, config_path: str = "config.yaml"):
         """
         Initialize configuration manager
         
