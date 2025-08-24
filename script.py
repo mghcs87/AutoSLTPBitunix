@@ -77,7 +77,7 @@ def cancel_existing_tpsl_orders(symbol):
         pending_orders = session.trade.get_symbol_pending_tpsl_orders(symbol=symbol) 
         
         if pending_orders: 
-            orders_to_cancel = [{'orderId': order['orderId']} for order in pending_orders] 
+            orders_to_cancel = [{'orderId': order['id']} for order in pending_orders] 
             print(f"Found {len(orders_to_cancel)} pending TP/SL order(s). Canceling them now...") 
             session.trade.cancel_orders(symbol=symbol, order_list=orders_to_cancel) 
         else: 
@@ -197,7 +197,7 @@ def get_user_settings():
         tp_choice = input(">> Do you want to set an automatic Take Profit? (y/N): ").lower()
         if tp_choice == 'y':
             try:
-                tp_input = float(input(">> Enter the TP percentage (e.g., 1 for 1%): "))
+                tp_input = float(input(">> Enter the TP percentage (e.g., 1 for 1% or 1.5 for 1.5%): "))
                 if tp_input > 0:
                     is_tp_active = True
                     tp_percentage = tp_input
